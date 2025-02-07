@@ -1,0 +1,167 @@
+/* Center the event detail page */
+.event-detail-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f9f9f9;
+}
+
+/* Card container */
+.event-detail-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+
+}
+
+.event-title-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Title */
+.event-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Description */
+.description {
+    font-size: 16px;
+    color: #666;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Info section */
+.eventinfo p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #444;
+}
+
+/* Status badge */
+.event-status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Different status colors */
+.event-status.upcoming {
+    background: #ffeb99;
+    color: #c29200;
+}
+
+.event-status.completed {
+    background: #c8f7c5;
+    color: #2a8522;
+}
+
+/* Attendees section */
+.attendeesection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #444;
+}
+
+/* Attendee icon */
+.attendee-icon {
+    margin-right: 8px;
+    color: #7F57F1;
+}
+
+/* Loader container */
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Loader animation */
+.loading-spinner {
+    animation: spin 1s linear infinite;
+    color: #7F57F1;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Error message */
+.error-message {
+    text-align: center;
+    color: red;
+    font-size: 18px;
+}
+
+/* Make category and date appear in one line */
+.eventinfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.eventcategory,
+.eventdate {
+    font-size: 14px;
+    color: #444;
+    flex: 1;
+}
+
+.eventcategory {
+    text-align: left;
+}
+
+.eventdate {
+    text-align: right;
+}
+
+.attendee-list {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.attendee-list h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.attendee-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.attendee-item {
+    padding: 8px;
+    background: #fff;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}

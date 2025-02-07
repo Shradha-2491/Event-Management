@@ -1,0 +1,191 @@
+.dashboard-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.dashboard-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.event-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    position: relative;
+    max-width: 500px;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-title {
+    font-size: 1.4rem;
+    color: #7F57F1;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+    cursor: pointer;
+}
+
+.event-description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+    /* Adjust as needed */
+    display: inline-block;
+    cursor: pointer;
+}
+
+.event-category,
+.event-location,
+.event-date,
+.event-status {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Status Labels */
+.event-status {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-top: 15px;
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+.event-status.upcoming {
+    background-color: #E3F2FD;
+    color: #1E88E5;
+}
+
+.event-status.completed {
+    background-color: #E8F5E9;
+    color: #43A047;
+}
+
+.event-status.cancelled {
+    background-color: #FFEBEE;
+    color: #D32F2F;
+}
+
+.event-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+
+.edit-icon,
+.delete-icon {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.edit-icon {
+    color: #1a1919;
+}
+
+.edit-icon:hover {
+    transform: scale(1.2);
+}
+
+.delete-icon {
+    color: #D32F2F;
+}
+
+.delete-icon:hover {
+    transform: scale(1.2);
+}
+
+.filter-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.filter-container select,
+.filter-container input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.event-attendees {
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    gap: 5px;
+}
+
+.attend-button {
+    background-color: none;
+    color: #7F57F1;
+    border: 1px solid #7F57F1;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.attend-button:disabled {
+    background-color: #ccc;
+    border: none;
+    color: rgb(114, 113, 113);
+    cursor: not-allowed;
+}
+
+.date-filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: fit-content;
+}
+
+.date-filters label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.date-input {
+    padding: 6px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.date-input:hover,
+.date-input:focus {
+    border-color: #7F57F1;
+    box-shadow: 0px 0px 5px #8F00FF;
+}
