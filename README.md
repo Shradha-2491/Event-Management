@@ -107,7 +107,7 @@ npm start
 
 ---
 
-## Deployment
+<!-- ## Deployment
 ### **Frontend (Vercel/Netlify)**
 - Connect your GitHub repository.
 - Set up environment variables in the Vercel/Netlify dashboard.
@@ -118,7 +118,7 @@ npm start
 - Configure environment variables.
 - Ensure PostgreSQL database is accessible.
 
----
+--- -->
 
 ## Roadmap
 - **WebSocket Integration** for real-time updates.
