@@ -1,24 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { getEventById, getUserByEvent } from "../api/events";
-import "../styles/EventDetail.css"; // Import the updated CSS
-import { Loader, Users } from "lucide-react";
-import { io } from "socket.io-client";
+import "../styles/EventDetail.css";
+import { Loader, Users, ArrowLeft } from "lucide-react";
+import socket from "../socket";
 
 const EventDetail = () => {
     const { eventId } = useParams();
+    const navigate = useNavigate();
     const [event, setEvent] = useState(null);
     const [attendeeCount, setAttendeeCount] = useState(0);
     const [attendee, setAttendee] = useState([]);
     const [loading, setLoading] = useState(true);
-    const socket = io(process.env.REACT_APP_API_URL || "http://localhost:5000");
 
     const fetchEventDetails = async () => {
         try {
             const eventData = await getEventById(eventId);
             setEvent(eventData.event);
 
-            // Fetch number of attendees
             const attendeesData = await getUserByEvent(eventId);
             console.log(attendeesData)
             setAttendeeCount(attendeesData.data.length);
@@ -61,6 +60,9 @@ const EventDetail = () => {
     return (
         <div className="event-detail-wrapper">
             <div className="event-detail-card">
+                <button className="back-button" onClick={() => navigate("/dashboard")}>
+                    <ArrowLeft size={24} />
+                </button>
                 <div className="event-title-container"><h2 className="event-title">{event.title}</h2></div>
                 <div className="attendeesection">
                     <Users className="attendee-icon" size={20} />

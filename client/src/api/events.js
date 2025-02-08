@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API_URL = process.env.REACT_APP_API_URL;
 
 export const getEvents = async (filters = {}) => {
     try {
@@ -51,7 +51,7 @@ export const updateEvent = async (eventId, updatedData, token) => {
     }
 };
 
-// Delete an event by ID
+
 export const deleteEvent = async (eventId, token) => {
     try {
         await axios.delete(`${API_URL}/api/event/${eventId}`, {

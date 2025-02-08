@@ -12,7 +12,6 @@ const Login = () => {
         e.preventDefault();
         console.log("Logging in with:", email, password);
         try {
-            // Call API for authentication
             const response = await login(email, password);
             localStorage.setItem("user", JSON.stringify(response));
             console.log("Login Successful:", response);

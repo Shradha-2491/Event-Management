@@ -194,16 +194,13 @@ const Dashboard = () => {
                                 {event.description}
                             </p>
                             <p className="event-category"><strong>Category:</strong> {event.category}</p>
-                            {/* <p className="event-location"><strong>Location:</strong> {event.location}</p> */}
                             <p className="event-date"><strong>Date:</strong> {new Date(event.date).toDateString()}</p>
-                            {/* <p className="event-host"><strong>Hosted by:</strong> {event.created_by}</p> */}
                             <p className={`event-status ${event.status?.toLowerCase()}`}>
                                 <strong>Status:</strong> {event.status || "Pending"}
                             </p>
 
 
                             <div className="event-actions">
-                                {/* Attend Button */}
                                 <div className="event-actions">
                                     {user?.user?.id ? <button
                                         className="attend-button"

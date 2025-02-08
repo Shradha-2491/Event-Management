@@ -1,10 +1,9 @@
-/* Center the login form */
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to right, #8F00FF, #8e44ad);
+    background: linear-gradient(135deg, #6A42E1, #7F57F1, #5A36E8);
 }
 
 .login-box {
@@ -18,10 +17,9 @@
 
 .login-box h2 {
     margin-bottom: 20px;
-    color: #8F00FF;
+    color: #7F57F1;
 }
 
-/* Input Fields */
 .login-box input {
     width: 100%;
     padding: 12px;
@@ -31,9 +29,8 @@
     font-size: 16px;
 }
 
-/* Buttons */
 .login-button {
-    background: #8F00FF;
+    background: #7F57F1;
     color: white;
     border: none;
     padding: 12px;
@@ -45,15 +42,13 @@
 }
 
 .login-button:hover {
-    background: #8F00FF;
+    background: #7F57F1;
 }
 
-/* Guest Login */
-/* Guest Login - Better Styled Button */
 .guest-button {
     background: none;
-    color: #8F00FF;
-    border: 2px solid #8F00FF;
+    color: #7F57F1;
+    border: 2px solid #7F57F1;
     padding: 10px;
     width: 100%;
     font-size: 16px;
@@ -68,22 +63,20 @@
     gap: 8px;
 }
 
-/* Hover Effect */
 .guest-button:hover {
-    background: #8F00FF;
+    background: #7F57F1;
     color: white;
     transform: scale(1.05);
-    box-shadow: 0px 4px 8px rgba(106, 13, 173, 0.2);
+    box-shadow: 0px 4px 8px #6A42E1;
 }
 
-/* Links */
 .login-links {
     margin-top: 15px;
     font-size: 14px;
 }
 
 .login-links a {
-    color: #8F00FF;
+    color: #7F57F1;
     text-decoration: none;
     font-weight: bold;
 }

@@ -17,8 +17,6 @@ const Register = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Register Data:", formData);
-        // Call backend API for registration here
         try {
             const response = await register(formData);
             localStorage.setItem("user", JSON.stringify(response));

@@ -22,14 +22,12 @@ app.use(express.text({
     limit: '100mb'
 }))
 
-// Enable CORS
 app.use(cors({
     origin: [process.env.CORS_ORIGIN, "http://localhost:3000"],
     methods: 'GET,PUT,POST,PATCH,DELETE',
     allowedHeaders: 'Content-Type, Authorization',
 }));
 
-// WebSocket connection
 io.on("connection", (socket) => {
     // console.log("A user connected:", socket.id);
 
@@ -39,7 +37,7 @@ io.on("connection", (socket) => {
 });
 
 app.set("socketio", io);
-// Import routes
+
 registerRoutes(app);
 server.listen(process.env.PORT, () => console.log('Server started on: ' + process.env.PORT))
 

@@ -5,7 +5,7 @@ export const createEvent = async (eventData) => {
 };
 
 export const getAllEvents = async (filters) => {
-    return await Event.findAll({ where: filters, order: [['created_at', 'DESC']], });
+    return await Event.findAll({ where: filters, order: [['date', 'DESC']], });
 };
 
 export const getEventById = async (id) => {
@@ -15,9 +15,9 @@ export const getEventById = async (id) => {
 export const updateEvent = async (id, eventData) => {
     const updatedRows = await Event.update(eventData, { where: { id } });
 
-    if (updatedRows === 0) return null; // No event found
+    if (updatedRows === 0) return null;
 
-    // Fetch and return updated event
+
     const updatedEvent = await Event.findByPk(id);
     return updatedEvent;
 };

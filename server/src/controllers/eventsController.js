@@ -4,7 +4,7 @@ import { Op } from "sequelize";
 export const createEventHandler = async (req, res) => {
     try {
         const event = await createEvent(req.body);
-        // Emit new event to all clients
+
         const io = req.app.get("socketio");
         io.emit("eventCreated", event);
         res.status(201).json({ success: true, event });
@@ -17,15 +17,9 @@ export const getEventsHandler = async (req, res) => {
     try {
         const { status, category, fromDate, toDate } = req.query;
         let filters = {};
-        console.log(status)
-        console.log(category)
-        console.log(fromDate)
-        console.log(toDate)
-        console.log("Request", req.query)
 
         if (status && status !== "all") filters.status = status;
         if (category && category !== "all") filters.category = category;
-        console.log(new Date(fromDate))
         if (fromDate) filters.date = { [Op.gte]: new Date(fromDate) };
         if (toDate) {
             filters.date = {
@@ -33,7 +27,6 @@ export const getEventsHandler = async (req, res) => {
                 [Op.lte]: new Date(toDate),
             };
         }
-        console.log("Filters:", filters)
         const events = await getAllEvents(filters);
         res.status(200).json({ success: true, events });
     } catch (error) {
@@ -56,7 +49,7 @@ export const updateEventHandler = async (req, res) => {
         console.log("User", req.user);
 
         const response = await updateEvent(req.params.id, req.body);
-        // Emit event update
+
         const io = req.app.get("socketio");
         io.emit("eventUpdated", response);
         res.status(200).json({ success: true, message: "Event updated successfully" });
@@ -69,7 +62,6 @@ export const deleteEventHandler = async (req, res) => {
     try {
         await deleteEvent(req.params.id);
 
-        // Emit event deleted
         const io = req.app.get("socketio");
         io.emit("eventDeleted", req.params.id);
 

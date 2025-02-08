@@ -1,4 +1,3 @@
-/* Center the event detail page */
 .event-detail-wrapper {
     display: flex;
     justify-content: center;
@@ -7,13 +6,13 @@
     background: #f9f9f9;
 }
 
-/* Card container */
 .event-detail-card {
+    position: relative;
     background: #ffffff;
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
+    max-width: 1000px;
 
 }
 
@@ -22,7 +21,6 @@
     justify-content: center;
 }
 
-/* Title */
 .event-title {
     font-size: 24px;
     font-weight: bold;
@@ -30,7 +28,6 @@
     color: #333;
 }
 
-/* Description */
 .description {
     font-size: 16px;
     color: #666;
@@ -38,14 +35,12 @@
     margin-bottom: 15px;
 }
 
-/* Info section */
 .eventinfo p {
     font-size: 14px;
     margin: 5px 0;
     color: #444;
 }
 
-/* Status badge */
 .event-status {
     display: inline-block;
     padding: 6px 12px;
@@ -55,7 +50,6 @@
     margin-top: 10px;
 }
 
-/* Different status colors */
 .event-status.upcoming {
     background: #ffeb99;
     color: #c29200;
@@ -66,7 +60,6 @@
     color: #2a8522;
 }
 
-/* Attendees section */
 .attendeesection {
     display: flex;
     align-items: center;
@@ -75,13 +68,11 @@
     color: #444;
 }
 
-/* Attendee icon */
 .attendee-icon {
     margin-right: 8px;
     color: #7F57F1;
 }
 
-/* Loader container */
 .loader-container {
     display: flex;
     flex-direction: column;
@@ -92,7 +83,6 @@
     color: #555;
 }
 
-/* Loader animation */
 .loading-spinner {
     animation: spin 1s linear infinite;
     color: #7F57F1;
@@ -109,14 +99,12 @@
     }
 }
 
-/* Error message */
 .error-message {
     text-align: center;
     color: red;
     font-size: 18px;
 }
 
-/* Make category and date appear in one line */
 .eventinfo {
     display: flex;
     justify-content: space-between;
@@ -164,4 +152,22 @@
     margin-bottom: 5px;
     border-radius: 5px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.back-button:hover {
+    transform: scale(1.1);
 }

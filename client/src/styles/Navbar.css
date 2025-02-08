@@ -19,18 +19,20 @@
 
 .navbar-button {
     background-color: #7F57F1;
-    /* Purple Color */
     color: white;
     padding: 8px 15px;
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .navbar-button:hover {
     background-color: #8F00FF;
-    /* Darker shade on hover */
 }
 
 .user-info {
@@ -69,15 +71,10 @@
     gap: 15px;
 }
 
-
-
-
-
 .user-name {
     font-weight: bold;
 }
 
-/* Mobile View */
 @media (max-width: 768px) {
     .menu-icon {
         display: block;

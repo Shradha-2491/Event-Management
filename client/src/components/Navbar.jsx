@@ -20,7 +20,7 @@ const Navbar = () => {
             setIsAuthenticated(true);
             navigate('/dashboard');
         }
-    }, []);
+    }, [localStorage.getItem("user")]);
 
     const handleLogout = () => {
         localStorage.removeItem("user");
@@ -32,13 +32,12 @@ const Navbar = () => {
     const handleCreateEvent = async (eventData) => {
         console.log("Event Created:", eventData);
         const response = await createEvent(eventData, user?.token);
-        console.log(response);
     };
 
     return (
         <>
             <nav className="navbar">
-                <Link to="/">
+                <Link>
                     <img src={logo} alt="Event Management Logo" className="navbar-logo" />
                 </Link>
                 <div className="menu-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -61,7 +60,6 @@ const Navbar = () => {
                 </div>
             </nav>
 
-            {/* Create Event Modal */}
             <CreateEventModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onCreate={handleCreateEvent} />
         </>
     );

@@ -40,7 +40,7 @@ The Event Management Platform is a full-stack web application that allows users 
 - Display list of attendees for each event.
 - Show attendee details (name) on event pages.
 
-### **Real-Time Updates (Upcoming Feature)**
+### **Real-Time Updates**
 - Implement WebSockets to update attendee lists dynamically.
 
 ---
@@ -120,9 +120,7 @@ npm start
 
 --- -->
 
-## Roadmap
-- **WebSocket Integration** for real-time updates.
-- **Admin Dashboard** for managing events and attendees.
+## Future Development can be
 - **Payment Integration** for ticketed events.
 - **Google Calendar Sync** to integrate events with user calendars.
 

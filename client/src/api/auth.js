@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const API_URL = process.env.REACT_APP_API_URL;
 
 const apiRequest = async (method, endpoint, data = null) => {
     try {
@@ -25,12 +25,12 @@ const apiRequest = async (method, endpoint, data = null) => {
     }
 };
 
-// 🔹 User Login
+
 export const login = async (email, password) => {
     return apiRequest("POST", "login", { email, password });
 };
 
-// 🔹 User Registration
+
 export const register = async (userData) => {
     return apiRequest("POST", "register", userData);
 };
