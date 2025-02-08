@@ -63,7 +63,7 @@ const EventDetail = () => {
                 <button className="back-button" onClick={() => navigate("/dashboard")}>
                     <ArrowLeft size={24} />
                 </button>
-                <div className="event-title-container"><h2 className="event-title">{event.title}</h2></div>
+                <div className="event-title-container"><h2 className="eventtitle">{event.title}</h2></div>
                 <div className="attendeesection">
                     <Users className="attendee-icon" size={20} />
                     <p><strong>Attendees:</strong> {attendeeCount}</p>

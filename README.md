@@ -25,7 +25,7 @@ The Event Management Platform is a full-stack web application that allows users 
 --- -->
 
 ## Features
-### **User Authentication**
+### **User Authentication and Authorization**
 - Register/Login functionality.
 - JWT-based authentication.
 - User sessions persisted on the frontend.
