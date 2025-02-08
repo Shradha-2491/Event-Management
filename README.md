@@ -14,7 +14,7 @@ The Event Management Platform is a full-stack web application that allows users 
 - **Express.js** - Node.js framework for handling API requests.
 - **Sequelize** - ORM for database interactions.
 - **PostgreSQL** - Database for storing events and user data.
-- **Supabase**
+- **Neon**
 - **WebSockets** - For real-time updates (to be implemented).
 
 <!-- ### **Deployment & Hosting:**
