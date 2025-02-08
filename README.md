@@ -36,7 +36,7 @@ The Event Management Platform is a full-stack web application that allows users 
 - Filter events by status (Upcoming, Completed) and date range.
 
 ### **Attendee Management**
-- Users can RSVP to events.
+- Users can create a events.
 - Display list of attendees for each event.
 - Show attendee details (name) on event pages.
 
