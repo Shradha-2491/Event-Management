@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { io } from "socket.io-client";
 import { useNavigate } from "react-router-dom";
 import "../styles/Dashboard.css";
-import { Pencil, Trash2, Users, Loader } from "lucide-react";
+import { Pencil, Trash2, Loader } from "lucide-react";
 import { attendEvent, deleteEvent, getEventByUser, getEvents, updateEvent } from "../api/events";
 import UpdateEventModal from "../components/UpdateEventModal";
 import socket from "../socket";
@@ -45,7 +44,9 @@ const Dashboard = () => {
         socket.connect();
 
         socket.on("eventCreated", (newEvent) => {
-            setEvents((prevEvents) => [...prevEvents, newEvent]);
+            setEvents((prevEvents) => [...prevEvents, newEvent]
+                .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+                .reverse());
         });
 
         socket.on("eventUpdated", (updatedEvent) => {
@@ -181,8 +182,8 @@ const Dashboard = () => {
                         onChange={(e) => setFilters({ ...filters, toDate: e.target.value })}
                     />
                 </div>
-
             </div>
+
 
             <div className="events-grid">
                 {events.length > 0 ? (
@@ -202,7 +203,12 @@ const Dashboard = () => {
 
                             <div className="event-actions">
                                 <div className="event-actions">
-                                    {user?.user?.id ? <button
+                                    {user?.user?.id ? user?.user?.id === event.created_by_id ? <button
+                                        className="attend-button"
+                                        disabled={true}
+                                    >
+                                        Attending
+                                    </button> : <button
                                         className="attend-button"
                                         onClick={() => handleAttend(event.id)}
                                         disabled={userEvents.includes(event.id)}

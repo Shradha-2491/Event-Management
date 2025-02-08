@@ -59,7 +59,7 @@ const Login = () => {
                     <button type="submit" className="login-button">Login</button>
                 </form>
                 <button className="guest-button" onClick={handleGuestLogin}>
-                    Login as Guest
+                    Continue as a Guest
                 </button>
                 <div className="login-links">
                     <p>Don't have an account? <Link to="/register">Register</Link></p>

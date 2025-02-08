@@ -49,7 +49,10 @@ const Navbar = () => {
                     {isAuthenticated && user?.user?.type !== 'Guest' ? (
                         <>
                             <span className="user-name">{user?.user?.name}</span>
-                            <button className="create-button" onClick={() => setIsModalOpen(true)}>Create Event</button>
+                            <button className="create-button" onClick={() => {
+                                setIsMenuOpen(false)
+                                setIsModalOpen(true)
+                            }}>Create Event</button>
                             <button className="navbar-button" onClick={handleLogout}>Logout</button>
                         </>
                     ) : (
